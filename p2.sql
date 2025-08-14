@@ -6,22 +6,59 @@ where (ID%2)=0
 ex2: 
   select count(city)-count( distinct city)
 from station
-ex3: hackerrank-the-blunder: https://www.hackerrank.com/challenges/the-blunder/problem?isFullScreen=true
+ex3: 
+  select 
+ceiling(avg(salary)-avg(replace(salary,'0',''))) as error_amount
+from employees
 
-ex4: datalemur-alibaba-compressed-mean: https://datalemur.com/questions/alibaba-compressed-mean
+ex4: 
+  SELECT 
+round(cast(sum(item_count*order_occurrences)/sum(order_occurrences) as DECIMAL),1) as mean
+FROM items_per_order;
+ex5: 
+  SELECT candidate_id
+FROM candidates
+where skill in ('Python','Tableau','PostgreSQL')
+group by candidate_id
+having count(skill) = 3
 
-ex5: datalemur-matching-skills: https://datalemur.com/questions/matching-skills
+ex6: 
+  SELECT user_id,
+date(max(post_date)) - date(min(post_date)) as days_between 
+FROM posts
+where post_date between '01-01-2021' and '01-01-2022'
+group by user_id
+having count(post_id)>=2
+ex7: 
+  SELECT card_name,
+max(issued_amount)-min(issued_amount) as difference
+FROM monthly_cards_issued
+group by card_name 
+order by difference desc ;
 
-ex6: datalemur-verage-post-hiatus-1: https://datalemur.com/questions/sql-average-post-hiatus-1
+ex8: 
+  SELECT manufacturer,
+COUNT(DRUG) AS DRUG_COUNT,
+ABS(SUM(COGS - TOTAL_SALES)) AS TOTAL_LOSS
+FROM pharmacy_sales
+WHERE TOTAL_SALES < COGS
+GROUP BY manufacturer
+ORDER BY TOTAL_LOSS DESC
 
-ex7: datalemur-cards-issued-difference: https://datalemur.com/questions/cards-issued-difference
+ex9: 
+  select id, movie, description, rating
+from Cinema
+where (id%2)=1 and description not like 'boring'
+order by rating desc
 
-ex8: datalemur-non-profitable-drugs: https://datalemur.com/questions/non-profitable-drugs
+ex10:
+  Select distinct teacher_id, count( distinct subject_id ) as cnt
+from teacher
+group by teacher_id
 
-ex9: leetcode-not-boring-movies: https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50
+ex11:
+  select user_id, count(follower_id) as followers_count
+from Followers
+group by user_id
+order by user_id 
 
-ex10: leetcode-number-of-unique-subject: https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/?envType=study-plan-v2&envId=top-sql-50
-
-ex11: leetcode-find-followers-count: https://leetcode.com/problems/find-followers-count/?envType=study-plan-v2&envId=top-sql-50
-
-ex12: leetcode-classes-more-than-5-students: https://leetcode.com/problems/classes-more-than-5-students/?envType=study-plan-v2&envId=top-sql-50
