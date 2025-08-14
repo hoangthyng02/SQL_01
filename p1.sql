@@ -55,8 +55,21 @@ ex11:
   select name,population,area
 from world
 where population>=25000000 or area >=3000000
-ex12: leetcode-article-views: https://leetcode.com/problems/article-views-i/?envId=top-sql-50
+ex12: 
+  select distinct author_id as id
+from views
+where author_id = viewer_id
+order by author_id 
 Datalemur & StrataScratch
-ex13: datalemur-tesla-unfinished-part: https://datalemur.com/questions/tesla-unfinished-parts
-ex14: datalemur-lyft-driver-wages: https://platform.stratascratch.com/coding/10003-lyft-driver-wages?code_type=1
-ex15: datalemur-find-the-advertising-channel: https://platform.stratascratch.com/coding/10002-find-the-advertising-channel-where-uber-spent-more-than-100k-usd-in-2019?code_type=1
+ex13: 
+  SELECT part ,assembly_step
+FROM parts_assembly
+WHERE finish_date is null 
+ex14:
+  select * from lyft_drivers
+    WHERE YEARLY_SALARY <= 30000 
+    OR YEARLY_SALARY >=70000;
+ex15: 
+select advertising_channel from uber_advertising
+    WHERE money_spent > 100000
+    AND YEAR = 2019;
