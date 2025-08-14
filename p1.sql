@@ -25,13 +25,36 @@ where city like '%a' or
         city like '%i' or
         city like '%o' or
         city like '%u'
-ex6: hackerank-weather-observation-station-9: https://www.hackerrank.com/challenges/weather-observation-station-9/problem
-ex7: hackerank-name-of-employees: https://www.hackerrank.com/challenges/name-of-employees/problem
-ex8: hackerank-salary-of-employees: https://www.hackerrank.com/challenges/salary-of-employees/problem
+ex6: 
+    SELECT distinct CITY
+FROM STATION
+where city not like 'A%' and
+        city not like 'E%' and
+        city not like 'I%' and
+        city not like 'O%' and
+        city not like 'U%'
+ex7: 
+  select name
+from employee
+order by name
+ex8:
+  select name
+from employee
+where months <10 and salary >2000
+order by  employee_id
 Leetcode
-ex9: leetcode-recyclable-and-low-fat-products: https://leetcode.com/problems/recyclable-and-low-fat-products/?envId=top-sql-50
-ex10: leetcode-find-customer-referee: https://leetcode.com/problems/find-customer-referee/?envId=top-sql-50
-ex11: leetcode-big-countries: https://leetcode.com/problems/big-countries/?envId=top-sql-50
+ex9: 
+  select product_id
+from Products
+where low_fats='Y' and recyclable='Y'
+ex10:
+  SELECT name
+FROM Customer
+WHERE referee_id <> 2 OR referee_id IS NULL
+ex11: 
+  select name,population,area
+from world
+where population>=25000000 or area >=3000000
 ex12: leetcode-article-views: https://leetcode.com/problems/article-views-i/?envId=top-sql-50
 Datalemur & StrataScratch
 ex13: datalemur-tesla-unfinished-part: https://datalemur.com/questions/tesla-unfinished-parts
