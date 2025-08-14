@@ -9,8 +9,22 @@ WHERE COUNTRYCODE='JPN'
 ex3: 
 SELECT CITY, STATE
 FROM STATION
-ex4: hackerank-weather-observation-station-6: https://www.hackerrank.com/challenges/weather-observation-station-6/problem
-ex5: hackerank-weather-observation-station-7: https://www.hackerrank.com/challenges/weather-observation-station-7/problem
+ex4: 
+  SELECT distinct CITY
+FROM STATION
+where city like 'a%' or
+        city like 'e%' or
+        city like 'i%' or
+        city like 'o%' or
+        city like 'u%'
+ex5: 
+  SELECT distinct CITY
+FROM STATION
+where city like '%a' or
+        city like '%e' or
+        city like '%i' or
+        city like '%o' or
+        city like '%u'
 ex6: hackerank-weather-observation-station-9: https://www.hackerrank.com/challenges/weather-observation-station-9/problem
 ex7: hackerank-name-of-employees: https://www.hackerrank.com/challenges/name-of-employees/problem
 ex8: hackerank-salary-of-employees: https://www.hackerrank.com/challenges/salary-of-employees/problem
